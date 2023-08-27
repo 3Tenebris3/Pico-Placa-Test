@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="face.css">
+    <title>Stack Builders A.N.</title>
+</head>
+
+<body>
+    <!-- Contenedor principal de la página -->
+    <div class="mainContainer">
+
+        <!-- Sección donde el usuario ingresará la placa de su vehículo -->
+        <div class="placaContainer">
+
+            <!-- Título chévere en la parte superior -->
+            <div class="tittle">
+                <h1>PICO - PLACA</h1>
+            </div>
+
+            <!-- Aquí es donde el usuario ingresará su número de placa -->
+            <div class="placa">
+                <!-- Cada "placaCont" es para un caracter de la placa -->
+                <!-- Los primeros tres son para letras -->
+                <div class="placaCont">
+                    <!-- onkeypress es para asegurarse de que solo se ingresen letras -->
+                    <input type="text" id="placaLetter1" onkeypress="return soloLetter(event)" maxlength="1"></input>
+                </div>
+                <div class="placaCont">
+                    <input type="text" id="placaLetter2" onkeypress="return soloLetter(event)" maxlength="1"></input>
+                </div>
+                <div class="placaCont">
+                    <input type="text" id="placaLetter3" onkeypress="return soloLetter(event)" maxlength="1"></input>
+                </div>
+
+                <!-- Estos son para los números de la placa -->
+                <div class="placaCont">
+                    <input type="text" id="placaNum1" onkeypress="return soloNum(event)" maxlength="1"></input>
+                </div>
+                <div class="placaCont">
+                    <input type="text" id="placaNum2" onkeypress="return soloNum(event)" maxlength="1"></input>
+                </div>
+                <div class="placaCont">
+                    <input type="text" id="placaNum3" onkeypress="return soloNum(event)" maxlength="1"></input>
+                </div>
+                <div class="placaCont">
+                    <input type="text" id="placaNum4" onkeypress="return soloNum(event)" maxlength="1"></input>
+                </div>
+            </div>
+
+            <!-- Aquí es donde el usuario seleccionará la fecha y hora -->
+            <div class="date_time">
+                <div class="dateCont">
+                    <!-- Selector de fecha -->
+                    <input type="date" id="date" class="pickersDate"></input>
+                </div>
+                <div class="dateCont">
+                    <!-- Botón para verificar el "Pico y Placa" basado en la info proporcionada -->
+                    <button id="picoBtn" class="picoButton">
+                        Check "Pico Placa"
+                    </button>
+                </div>
+                <div class="dateCont">
+                    <!-- Selector de hora -->
+                    <input type="time" id="time" class="pickersDate"></input>
+                </div>
+            </div>
+
+            <!-- Contenedor donde se mostrarán los mensajes después de verificar "Pico y Placa" -->
+            <div class="infoCont">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Un reloj en vivo porque ¿por qué no? -->
+    <div id="clock" onload="liveClock()">
+        <!-- Cada span muestra una parte del tiempo -->
+        <span id="hours"></span>
+        <span id="minutes"></span>
+        <span id="seconds"></span>
+        <span id="session"></span>
+    </div>
+
+    <!-- Vinculando el archivo JavaScript que hace toda la magia -->
+    <script src="brain.js"> </script>
+</body>
+
+</html>
